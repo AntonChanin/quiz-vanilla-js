@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  
+</head>
+
+<body>
+  <ui-form>
+    <form class="m-32 h-328 flex flex-col justify-between">
+        <div class="flex justify-between w-full">
+          <ui-text id="question" value="В каком городе планируете поступать?"></ui-text>
+          <ui-text data-id="step" value="Шаг 2/9" type="secondary"></ui-text>
+        </div>
+        <div id="field" class="flex wrap w-512 h-184 mt-24 justify-between aligin-between">
+        <ui-select>
+          <select class="ui-input">
+            <option value="Санкт-Петербург">Санкт-Петербург</option>
+            <option value="Москва">Москва</option>
+          </select>
+        </ui-select>
+        </div>
+        <div class="flex flex-row justify-between">
+          <ui-button id="prev" value="< Назад" type="secondary" class="flex justify-end"></ui-button>
+          <ui-button id="next" value="Далее >" type="primary" class="flex justify-end"></ui-button>
+        </div>
+    </form>
+  </ui-form>
+  <script src="bundle.js"></script>
+  <script>
+    setTimeout(() => {
+        const collection = document.getElementsByTagName('ui-select');
+        if (collection.length) {
+          collection[0].addEventListener('change', (e) => {
+            document.getElementById('next').setAttribute('name', 'done');
+          })
+        }
+    }, 1000);
+  </script>
+</body>
+</html>
