@@ -1,3 +1,270 @@
+@font-face {
+    font-family: 'Onest';
+    src: url("../assets/font/WOFF/OnestRegular1602-hint.woff") format("woff"),
+}
+
+#root-form {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background: green;
+    overflow: hidden;
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    /* identical to box height, or 125% */
+
+    /* NEW/Black */
+    color: #383838;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../assets/Quiz.png');
+}
+
+
+button.ui-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 4px;
+
+    width: inherit;
+    height: inherit;
+    min-width: 108px;
+    min-height: 44px;
+
+    border-radius: 12px;
+}
+
+button.ui-button.primary {
+    background-color: #383838;
+    color: #FFFFFF;
+}
+
+button.ui-button.outline {
+    background-color: transparent;
+    border: 1px solid #D8D8D8;
+}
+
+ui-radio-button {
+    display: inherit;
+    justify-content: inherit;
+    flex-wrap: inherit;
+    width: 252px;
+    height: 56px;
+}
+
+div.ui-radio-button {
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+
+    width: inherit;
+    height: inherit;
+    min-width: 252px;
+    min-height: 56px;
+
+    /* NEW/Gray 2 (fill) */
+    background-color: #F5F5F5;
+    border-radius: 16px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+div.ui-radio-button.selected {
+    border: 1px solid #383838;
+    border-radius: 16px;
+    background-color: white;
+}
+
+div.ui-radio-button  .radio {
+    box-sizing: border-box;
+
+    width: 20px;
+    height: 20px;
+
+    /* NEW/Gray 1 (stroke) */
+    border: 1px solid #D8D8D8;
+    border-radius: 50%;
+    padding: 0;
+}
+
+div.ui-radio-button .radio.selected {
+    background-color: white;
+    border: 5px solid #383838;
+}
+
+.ui-input {
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 16px;
+    gap: 99px;
+
+    width: 512px;
+    height: 56px;
+
+    /* NEW/Gray 2 (fill) */
+    background-color: #F5F5F5;
+    border-radius: 16px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    color: #9B9B9B;
+}
+
+ui-text {
+    display: inherit;
+};
+
+span.ui-text {
+    width: inherit;
+    justify-content: inherit;
+    /* NEW/Text - 16pt (20)/Medium */
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    /* identical to box height, or 125% */
+
+    /* NEW/Black */
+    color: #383838;
+}
+
+span.ui-text.secondary {
+    font-weight: 400;
+
+    /* identical to box height, or 125% */
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    opacity: 0.3;
+}
+
+span.ui-text.small {
+    font-weight: 400;
+    font-size: 12px;
+
+    /* identical to box height, or 167% */
+    text-align: center;
+
+    /* NEW/Gray 3 (text) */
+    color: #9B9B9B;
+}
+
+ui-form {    
+    position: absolute;
+    width: 576px;
+    height: 392px;
+    left: auto;
+    top: 32px;
+    right: 32px;
+
+    /* NEW/White */
+    background: #FFFFFF;
+    border-radius: 24px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.aligin-between {
+    align-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-512 {
+    width: 512px;
+}
+
+.h-184 {
+    height: 184px;
+}
+
+.h-328 {
+    height: 328px;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.m-32 {
+    margin: 32px;
+}
+
+.private-data {
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 8px;
 }
