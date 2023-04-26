@@ -31,9 +31,9 @@
         <ui-text data-id="step" value="Шаг 9/9" type="secondary"></ui-text>
       </div>
       <div id="field" class="flex wrap w-512 h-184 mt-24 justify-between aligin-between">
-        <ui-input value="Как вас зовут?" id="whats-u-name"></ui-input>
-        <ui-input value="Номер телефона" id="phone"></ui-input>
-        <ui-input value="E-mail" id="e-mail"></ui-input>
+        <ui-input type="text" value="Как вас зовут?" id="whats-u-name"></ui-input>
+        <ui-input type="tel" value="Номер телефона" id="phone"></ui-input>
+        <ui-input type="email" value="E-mail" id="e-mail"></ui-input>
       </div>
       <div class="flex flex-col justify-between">
         <ui-button id="endpoint" value="Получить подборку" type="primary" class="flex justify-end w-full"></ui-button>
@@ -47,8 +47,21 @@
   <script src="bundle.js"></script>
   <script>
     setTimeout(() => {
+      fetch('response.json')
+          .then(res => res.json())
+          .then(data => {
+            document.getElementById('whats-u-name').getElementsByTagName('input')[0].value = data.name;
+            document.getElementById('phone').getElementsByTagName('input')[0].value = data.phone;
+            document.getElementById('e-mail').getElementsByTagName('input')[0].value = data.mail;
+          });
       document.getElementById('endpoint').addEventListener('click', (e) => {
-        alert('Whooo!');
+        if (
+          document.getElementById('whats-u-name').getElementsByTagName('input')[0].value &&
+          document.getElementById('phone').getElementsByTagName('input')[0].value &&
+          document.getElementById('e-mail').getElementsByTagName('input')[0].value
+        ) {
+          alert('Whooo!');
+        }
       }, 1000);
       const collection = document.getElementsByTagName('ui-radio-button');
       if (collection.length) {

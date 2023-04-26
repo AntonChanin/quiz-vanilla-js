@@ -10,13 +10,17 @@ class UI_Input extends HTMLElement {
     set value(val) {
         this.setAttribute('value', val);
     };
+
+    get type() {
+        return this.getAttribute('type');
+    };
     
     static get observedAttributes() {
-        return ['value'];
+        return ['value', 'type'];
     }
 
     attributeChangesCallback(prop, oldVal, newVal) {
-        if (prop === 'value') this.render();
+        if (prop === 'value' || prop === 'type') this.render();
     };
 
     connectedCallback() {
@@ -24,7 +28,7 @@ class UI_Input extends HTMLElement {
     };
 
     render() {
-        this.innerHTML = `<input class="ui-input" placeholder="${this.value}" />`
+        this.innerHTML = `<input class="ui-input" placeholder="${this.value}" type="${this.type}" />`
     };
 }
 
